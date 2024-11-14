@@ -63,7 +63,7 @@ func decrypt(ciphertext string) (string, error) {
 	return string(plaintext), nil
 }
 
-func enc(input string) string {
+func Enc(input string) string {
 	output, err := encrypt(input)
 	if err != nil {
 		log.Fatal("Error encrypting:", err)
@@ -71,7 +71,7 @@ func enc(input string) string {
 	return output
 }
 
-func dec(input string) string {
+func Dec(input string) string {
 	output, err := decrypt(input)
 	if err != nil {
 		log.Fatal("Error decrypting:", err)
