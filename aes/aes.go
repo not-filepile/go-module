@@ -10,9 +10,9 @@ import (
 	"log"
 )
 
-var UUID = []byte("beehiveontop1234") // 16-byte AES key
+var K = []byte("beehiveontop1234") //16byte key
 func encrypt(plaintext string) (string, error) {
-	block, err := aes.NewCipher(UUID)
+	block, err := aes.NewCipher(K)
 	if err != nil {
 		return "", err
 	}
@@ -37,7 +37,7 @@ func decrypt(ciphertext string) (string, error) {
 		return "", err
 	}
 
-	block, err := aes.NewCipher(UUID)
+	block, err := aes.NewCipher(K)
 	if err != nil {
 		return "", err
 	}
